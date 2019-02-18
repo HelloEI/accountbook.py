@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+# -*- coding:UTF-8 -*-
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from myaccount import db

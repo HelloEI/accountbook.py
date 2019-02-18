@@ -108,7 +108,7 @@ def register():
 			db.session.flush()
 
 			#默认添加一个账本
-			newBook = FinanceBook('默认账本',newuser.id)
+			newBook = FinanceBook('默认账本',newuser.id,'Y')
 			db.session.add(newBook)
 			db.session.flush()
 

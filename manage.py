@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+# -*- coding:UTF-8 -*-
 from flask import Flask
 from flask_script import Server, Shell, Manager, Command, prompt_bool
 from myaccount import view,app,register_blueprints,db,initLogInfo

@@ -26,16 +26,17 @@ def editFinBook(bookId=None):
 
 @finBook.route('/saveFinBook',methods=['GET', 'POST'])
 def saveFinBook():
-	id = request.form.get("id")
-	bookName = request.form['bookName']
-	if(id):
-		book = FinanceBook.query.get(id)
-		book.bookName = bookName
-	else:
-		newBook = FinanceBook(bookName,session.get("userId"))
-		db.session.add(newBook)
-	db.session.commit()
-	return redirect(url_for(".bookList"))
+    id = request.form.get("id")
+    bookName = request.form['bookName']
+    if(id):
+        book = FinanceBook.query.get(id)
+        book.bookName = bookName
+    else:
+        #   newBook = FinanceBook(bookName,session.get("userId"))
+        newBook = FinanceBook(bookName,session.get("userId"),'Y')
+        db.session.add(newBook)
+    db.session.commit()
+    return redirect(url_for(".bookList"))
 
 
 @finBook.route('/changeBook/<bookId>')
